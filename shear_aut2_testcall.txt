@@ -1,0 +1,4 @@
+ipython /home/malbert/software/fusion/preprocessing_dev4/shear_aut2.py /data/norlin/zSPIM/pipeline/differentStackSizesReg/stack4/Cam_Left_%05d.h5 /data/norlin/zSPIM/pipeline/differentStackSizesReg/stack4/Cam_Right_%05d.h5 2 2 2.4 /data/norlin/zSPIM/pipeline/differentStackSizesReg/normal/Cam_Left_00002.h5 /data/norlin/zSPIM/pipeline/differentStackSizesReg/normal/Cam_Right_00002.h5 1 /data/malbert/tmp/nilsfusion/test_aut 1
+
+
+ipython /home/malbert/software/fusion/preprocessing_dev4/shear_test.py /data/norlin/zSPIM/fish/300515/2015-05-30_18.37.34/Stack_3_Channel_2/Cam_Right_%05d.h5 /data/norlin/zSPIM/fish/300515/2015-05-30_18.37.34/Stack_3_Channel_2/Cam_Right_%05d.h5 0 10 3 2.4 /data/norlin/zSPIM/fish/300515/2015-05-30_18.37.34/Stack_3_Channel_2/Cam_Right_00000.h5 /data/norlin/zSPIM/fish/300515/2015-05-30_18.37.34/Stack_3_Channel_2/Cam_Right_00000.h5 2 /data/malbert/tmp/nilsfusion/test_aut 0

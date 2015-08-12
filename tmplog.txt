@@ -1,0 +1,782 @@
+Python 2.6.5 (r265:79063, Feb 27 2014, 19:43:51) 
+Type "copyright", "credits" or "license" for more information.
+
+IPython 0.13.1 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+
+starting preprocessing pipeline using configuration file:
+
+    configuration.py
+
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6 exists...yes
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/pipe exists...yes
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/rot0 exists...yes
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/rot0/elastix exists...yes
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/rot1 exists...yes
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/rot1/elastix exists...yes
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused exists...yes
+checking if /tmp/fusion_20140508_135048 exists...no
+checking if /tmp/fusion_20140508_135048/folder0001 exists...no
+checking if /tmp/fusion_20140508_135048/folder0002 exists...no
+checking if /tmp/fusion_20140508_135048/folder0003 exists...no
+checking if /tmp/fusion_20140508_135048/folder0004 exists...no
+checking if /tmp/fusion_20140508_135048/folder0005 exists...no
+checking if /tmp/fusion_20140508_135048/folder0006 exists...no
+checking if /tmp/fusion_20140508_135048/folder0007 exists...no
+checking if /tmp/fusion_20140508_135048/folder0008 exists...no
+checking if /tmp/fusion_20140508_135048/folder0009 exists...no
+checking if /tmp/fusion_20140508_135048/folder0010 exists...no
+checking if /tmp/fusion_20140508_135048/folder0011 exists...no
+checking if /tmp/fusion_20140508_135048/folder0012 exists...no
+checking if /tmp/fusion_20140508_135048/folder0013 exists...no
+checking if /tmp/fusion_20140508_135048/folder0014 exists...no
+checking if /tmp/fusion_20140508_135048/folder0015 exists...no
+checking if /tmp/fusion_20140508_135048/folder0016 exists...no
+checking if /tmp/fusion_20140508_135048/folder0017 exists...no
+checking if /tmp/fusion_20140508_135048/folder0018 exists...no
+copying /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/pipe to /tmp/fusion_20140508_135048/folder0017
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/pipe to /tmp/fusion_20140508_135048/folder0017
+waiting for process 1
+
+
+------------------------------
+BEAD ALIGNMENT start
+
+found alignment parameters in /tmp/fusion_20140508_135048/folder0017/pipe/affineParams.py
+
+BEAD ALIGNMENT end
+------------------------------
+------------------------------
+FUSIONING start
+
+processing timepoint 200
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused/Time000200_00.tif exists...no
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0000/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0005/Time000200_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0000/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0005/Time000200_00.tif
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/RC/20120803/Stack0000/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0007/Time000200_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/RC/20120803/Stack0000/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0007/Time000200_00.tif
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0001/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0006/Time000200_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0001/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0006/Time000200_00.tif
+scp lin from /media/vip2data/malbert/registration/2012080
+elastix is started at Thu May  8 13:50:59 2014.
+
+which elastix:   /home/malbert/drosophila/scripts/registration/preprocessing_dev2/dependencies_linux/elastix_linux64_v4.7/bin/elastix
+elastix runs at: hufnagel-vip2
+  Linux 2.6.32-44-generic (x64), #98-Ubuntu SMP Mon Sep 24 17:27:10 UTC 2012
+  with 24153 MB memory, and 8 cores @ 1600 MHz.
+-------------------------------------------------------------------------
+
+Running elastix with parameter file 0: "/tmp/fusion_20140508_135048/folder0016/Time000200/elastixParameters.txt".
+
+Current time: Thu May  8 13:50:59 2014.
+Reading the elastix parameters from file ...
+
+Installing all components.
+InstallingComponents was successful.
+
+ELASTIX version: 4.700
+Command line options from ElastixBase:
+-f        /tmp/fusion_20140508_135048/folder0013/Time000200_00_filtered.mhd
+-m        /tmp/fusion_20140508_135048/folder0014/Time000200_00_filtered.mhd
+-fMask    unspecified, so no fixed mask used
+-mMask    unspecified, so no moving mask used
+-out      /tmp/fusion_20140508_135048/folder0016/Time000200/
+-p        /tmp/fusion_20140508_135048/folder0016/Time000200/elastixParameters.txt
+-threads  unspecified, so all available threads are used
+Command line options from TransformBase:
+-t0       /tmp/fusion_20140508_135048/folder0016/Time000200/elastixInitialTransform.txt
+
+Reading images...
+Reading images took 22 ms.
+
+Reading the elastix parameters from file ...
+
+WARNING: The parameter "AutomaticTransformInitializationMethod", requested at entry number 0, does not exist at all.
+  The default value "GeometricalCenter" is used instead.
+Transform parameters are initialized as: [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+Scales for transform parameters are: [10000, 10000000, 10000000, 10000000, 10000, 10000000, 10000000, 10000000, 10000, 1, 1, 1]
+WARNING: The parameter "GenerateLineSearchIterations", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+Initialization of all components (before registration) took: 115 ms.
+Preparation of the image pyramids took: 1082 ms.
+
+Resolution: 0
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "CheckNumberOfSamples", requested at entry number 0, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+Setting the fixed masks took: 0 ms.
+Setting the moving masks took: 0 ms.
+WARNING: The parameter "NumberOfFixedHistogramBins", requested at entry number 0, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "NumberOfMovingHistogramBins", requested at entry number 0, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "FixedLimitRangeRatio", requested at entry number 0, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "MovingLimitRangeRatio", requested at entry number 0, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "FixedKernelBSplineOrder", requested at entry number 0, does not exist at all.
+  The default value "0" is used instead.
+WARNING: The parameter "MovingKernelBSplineOrder", requested at entry number 0, does not exist at all.
+  The default value "3" is used instead.
+WARNING: The parameter "UseFastAndLowMemoryVersion", requested at entry number 0, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "UseJacobianPreconditioning", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "FiniteDifferenceDerivative", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "MaximumNumberOfIterations", requested at entry number 0, does not exist at all.
+  The default value "100" is used instead.
+WARNING: The parameter "MaximumNumberOfLineSearchIterations", requested at entry number 0, does not exist at all.
+  The default value "20" is used instead.
+WARNING: The parameter "StepLength", requested at entry number 0, does not exist at all.
+  The default value "1" is used instead.
+WARNING: The parameter "LineSearchValueTolerance", requested at entry number 0, does not exist at all.
+  The default value "0.0001" is used instead.
+WARNING: The parameter "LineSearchGradientTolerance", requested at entry number 0, does not exist at all.
+  The default value "0.9" is used instead.
+WARNING: The parameter "LBFGSUpdateAccuracy", requested at entry number 0, does not exist at all.
+  The default value "5" is used instead.
+WARNING: The parameter "StopIfWolfeNotSatisfied", requested at entry number 0, does not exist at all.
+  The default value "true" is used instead.
+Elastix initialization of all components (for this resolution) took: 7 ms.
+Initialization of AdvancedMattesMutualInformation metric took: 0 ms.
+1:ItNr	1a:SrchDirNr	1b:LineItNr	2:Metric	3:StepLength	4a:||Gradient||	4b:||SearchDir||	4c:DirGradient	5:Phase	6a:Wolfe1	6b:Wolfe2	7:LinSrchStopCondition	Time[ms]
+0	0	1	-0.785707	5.000000	0.025559	1.000000	0.001001	Main	true	true	WolfeSatisfied	14
+1	1	0	-0.823592	1.000000	0.030257	3.453833	-0.002039	Main	true	true	WolfeSatisfied	2
+2	2	0	-0.869726	1.000000	0.026461	4.074188	-0.001536	Main	true	true	WolfeSatisfied	1
+3	3	0	-0.880549	1.000000	0.006551	2.183899	-0.004034	Main	true	true	WolfeSatisfied	1
+4	4	1	-0.882458	0.387040	0.011657	1.683248	0.002152	Main	true	true	WolfeSatisfied	3
+5	5	0	-0.892800	1.000000	0.009457	2.023398	-0.010164	Main	true	true	WolfeSatisfied	1
+6	6	1	-0.948342	0.504107	0.014559	20.943649	-0.051143	Main	true	true	WolfeSatisfied	3
+7	7	2	-0.949389	0.043687	0.017484	14.275079	-0.004104	Main	true	true	WolfeSatisfied	4
+8	8	0	-0.954558	1.000000	0.014111	0.556830	-0.004377	Main	true	true	WolfeSatisfied	1
+9	9	2	-0.955251	0.069885	0.004801	1.471716	0.003903	Main	true	true	WolfeSatisfied	3
+10	10	0	-0.955492	1.000000	0.002806	0.176150	-0.000164	Main	true	true	WolfeSatisfied	1
+11	11	0	-0.955741	1.000000	0.002116	0.140897	-0.000151	Main	true	true	WolfeSatisfied	1
+12	12	2	-0.955748	0.070940	0.011659	0.147427	0.000069	Main	true	true	WolfeSatisfied	4
+13	13	0	-0.955769	1.000000	0.002693	0.254155	0.000275	Main	true	true	WolfeSatisfied	1
+14	14	0	-0.955834	1.000000	0.002038	0.115200	-0.000003	Main	true	true	WolfeSatisfied	1
+15	15	0	-0.955835	1.000000	0.001985	0.009597	-0.000000	Main	true	true	WolfeSatisfied	1
+16	16	8	-0.955836	1.372445	0.001969	0.004598	-0.000001	Main	true	true	WolfeSatisfied	11
+17	17	19	-0.955837	0.000579	0.011452	0.099262	0.000150	Main	true	false	MaxNrIterations	32
+Time spent in resolution 0 (ITK initialisation and iterating): 0.096 s.
+Applying transform this resolution ...
+
+  Writing image ...
+  Applying transform took 0 s.
+Stopping condition: Wolfe conditions are not satisfied.
+
+Resolution: 1
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "CheckNumberOfSamples", requested at entry number 1, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+Setting the fixed masks took: 0 ms.
+Setting the moving masks took: 0 ms.
+WARNING: The parameter "NumberOfFixedHistogramBins", requested at entry number 1, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "NumberOfMovingHistogramBins", requested at entry number 1, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "FixedLimitRangeRatio", requested at entry number 1, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "MovingLimitRangeRatio", requested at entry number 1, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "FixedKernelBSplineOrder", requested at entry number 1, does not exist at all.
+  The default value "0" is used instead.
+WARNING: The parameter "MovingKernelBSplineOrder", requested at entry number 1, does not exist at all.
+  The default value "3" is used instead.
+WARNING: The parameter "UseFastAndLowMemoryVersion", requested at entry number 1, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "UseJacobianPreconditioning", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "FiniteDifferenceDerivative", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "MaximumNumberOfIterations", requested at entry number 1, does not exist at all.
+  The default value "100" is used instead.
+WARNING: The parameter "MaximumNumberOfLineSearchIterations", requested at entry number 1, does not exist at all.
+  The default value "20" is used instead.
+WARNING: The parameter "StepLength", requested at entry number 1, does not exist at all.
+  The default value "1" is used instead.
+WARNING: The parameter "LineSearchValueTolerance", requested at entry number 1, does not exist at all.
+  The default value "0.0001" is used instead.
+WARNING: The parameter "LineSearchGradientTolerance", requested at entry number 1, does not exist at all.
+  The default value "0.9" is used instead.
+WARNING: The parameter "LBFGSUpdateAccuracy", requested at entry number 1, does not exist at all.
+  The default value "5" is used instead.
+WARNING: The parameter "StopIfWolfeNotSatisfied", requested at entry number 1, does not exist at all.
+  The default value "true" is used instead.
+Elastix initialization of all components (for this resolution) took: 0 ms.
+Initialization of AdvancedMattesMutualInformation metric took: 0 ms.
+1:ItNr	1a:SrchDirNr	1b:LineItNr	2:Metric	3:StepLength	4a:||Gradient||	4b:||SearchDir||	4c:DirGradient	5:Phase	6a:Wolfe1	6b:Wolfe2	7:LinSrchStopCondition	Time[ms]
+0	0	2	-0.251407	21.000000	0.005294	1.000000	0.001227	Main	true	true	WolfeSatisfied	14
+1	1	3	-0.360427	2.360606	0.009681	8.361340	-0.019202	Main	true	true	WolfeSatisfied	13
+2	2	19	-0.360509	0.000331	0.009667	59.092107	-0.247371	Main	true	false	MaxNrIterations	63
+Time spent in resolution 1 (ITK initialisation and iterating): 0.092 s.
+Applying transform this resolution ...
+
+  Writing image ...
+  Applying transform took 0 s.
+Stopping condition: Wolfe conditions are not satisfied.
+
+Resolution: 2
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "CheckNumberOfSamples", requested at entry number 2, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+Setting the fixed masks took: 0 ms.
+Setting the moving masks took: 0 ms.
+WARNING: The parameter "NumberOfFixedHistogramBins", requested at entry number 2, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "NumberOfMovingHistogramBins", requested at entry number 2, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "FixedLimitRangeRatio", requested at entry number 2, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "MovingLimitRangeRatio", requested at entry number 2, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "FixedKernelBSplineOrder", requested at entry number 2, does not exist at all.
+  The default value "0" is used instead.
+WARNING: The parameter "MovingKernelBSplineOrder", requested at entry number 2, does not exist at all.
+  The default value "3" is used instead.
+WARNING: The parameter "UseFastAndLowMemoryVersion", requested at entry number 2, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "UseJacobianPreconditioning", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "FiniteDifferenceDerivative", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "MaximumNumberOfIterations", requested at entry number 2, does not exist at all.
+  The default value "100" is used instead.
+WARNING: The parameter "MaximumNumberOfLineSearchIterations", requested at entry number 2, does not exist at all.
+  The default value "20" is used instead.
+WARNING: The parameter "StepLength", requested at entry number 2, does not exist at all.
+  The default value "1" is used instead.
+WARNING: The parameter "LineSearchValueTolerance", requested at entry number 2, does not exist at all.
+  The default value "0.0001" is used instead.
+WARNING: The parameter "LineSearchGradientTolerance", requested at entry number 2, does not exist at all.
+  The default value "0.9" is used instead.
+WARNING: The parameter "LBFGSUpdateAccuracy", requested at entry number 2, does not exist at all.
+  The default value "5" is used instead.
+WARNING: The parameter "StopIfWolfeNotSatisfied", requested at entry number 2, does not exist at all.
+  The default value "true" is used instead.
+Elastix initialization of all components (for this resolution) took: 0 ms.
+Initialization of AdvancedMattesMutualInformation metric took: 1 ms.
+1:ItNr	1a:SrchDirNr	1b:LineItNr	2:Metric	3:StepLength	4a:||Gradient||	4b:||SearchDir||	4c:DirGradient	5:Phase	6a:Wolfe1	6b:Wolfe2	7:LinSrchStopCondition	Time[ms]
+0	0	1	-0.486271	5.000000	0.015444	1.000000	-0.012940	Main	true	true	WolfeSatisfied	80
+1	1	1	-0.525901	0.169622	0.008920	40.467331	0.023252	Main	true	true	WolfeSatisfied	45
+2	2	0	-0.550293	1.000000	0.010373	2.360690	-0.014507	Main	true	true	WolfeSatisfied	25
+3	3	1	-0.578131	0.126831	0.016078	35.635396	0.209700	Main	true	true	WolfeSatisfied	44
+4	4	0	-0.584921	1.000000	0.008787	1.544607	-0.007297	Main	true	true	WolfeSatisfied	24
+5	5	0	-0.618598	1.000000	0.007164	1.897193	-0.008854	Main	true	true	WolfeSatisfied	23
+6	6	0	-0.685797	1.000000	0.013549	6.970201	0.023179	Main	true	true	WolfeSatisfied	22
+7	7	0	-0.702954	1.000000	0.011338	2.620669	0.012408	Main	true	true	WolfeSatisfied	21
+8	8	1	-0.704589	0.321236	0.007350	1.583367	-0.006978	Main	true	true	WolfeSatisfied	43
+9	9	0	-0.714812	1.000000	0.002864	0.723741	-0.001596	Main	true	true	WolfeSatisfied	21
+10	10	0	-0.721642	1.000000	0.002426	0.632953	0.000490	Main	true	true	WolfeSatisfied	21
+11	11	19	-0.721652	0.017150	0.002418	0.560825	-0.000601	Main	true	false	MaxNrIterations	445
+Time spent in resolution 2 (ITK initialisation and iterating): 0.823 s.
+Applying transform this resolution ...
+
+  Writing image ...
+  Applying transform took 0 s.
+Stopping condition: Wolfe conditions are not satisfied.
+
+
+Registration result checksum: 317286770
+
+Skipping applying final transform, no resulting output image generated.
+
+Final metric value  = -0.721652
+Time spent on saving the results, applying the final transform etc.: 2 ms.
+Running elastix with parameter file 0: "/tmp/fusion_20140508_135048/folder0016/Time000200/elastixParameters.txt", has finished.
+
+
+Current time: Thu May  8 13:51:02 2014.
+Time used for running elastix with this parameter file: 3 Seconds.
+
+-------------------------------------------------------------------------
+
+Total time elapsed: 3 Seconds.
+
+3/Data_scaled/RC/20120803/Stack0001/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0008/Time000200_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/RC/20120803/Stack0001/Time000200_00.tif to /tmp/fusion_20140508_135048/folder0008/Time000200_00.tif
+waiting for process 2
+waiting for process 3
+waiting for process 4
+waiting for process 5
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused/Time000201_00.tif exists...no
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0000/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0005/Time000201_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0000/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0005/Time000201_00.tif
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/RC/20120803/Stack0000/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0007/Time000201_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/RC/20120803/Stack0000/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0007/Time000201_00.tif
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0001/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0006/Time000201_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/LC/20120803/Stack0001/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0006/Time000201_00.tif
+scp lin from /media/vip2data/malbert/registration/20120803/Data_scaled/RC/20120803/Stack0001/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0008/Time000201_00.tif
+copying hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/RC/20120803/Stack0001/Time000201_00.tif to /tmp/fusion_20140508_135048/folder0008/Time000201_00.tif
+fusing and filtering opposing stacks from view 0
+loading files...
+[420 174  42]
+[420 174  42]
+calculating weights for opposing stacks fusion
+(420, 174, 44) [420, 174, 42]
+(420, 174, 44) [420, 174, 42]
+(420, 174, 42) (420, 174, 42)
+(420, 174, 42) (420, 174, 42)
+fusing stacks
+subtracting background using gaussian filter (radius 50)
+fusing and filtering opposing stacks from view 1
+loading files...
+[420 174  42]
+[420 174  42]
+(420, 174, 42) (420, 174, 42)
+(420, 174, 42) (420, 174, 42)
+fusing stacks
+subtracting background using gaussian filter (radius 50)
+##########
+continuing without normalization
+##########
+(420, 174, 42) [210, 87, 81]
+checking if /tmp/fusion_20140508_135048/folder0016/Time000200 exists...no
+
+
+Calling elastix for image based registration with arguments:
+
+ ['/home/malbert/drosophila/scripts/registration/preprocessing_dev2/dependencies_linux/elastix_linux64_v4.7/bin/elastix', '-f', '/tmp/fusion_20140508_135048/folder0013/Time000200_00_filtered.mhd', '-m', '/tmp/fusion_20140508_135048/folder0014/Time000200_00_filtered.mhd', '-p', '/tmp/fusion_20140508_135048/folder0016/Time000200/elastixParameters.txt', '-t0', '/tmp/fusion_20140508_135048/folder0016/Time000200/elastixInitialTransform.txt', '-out', '/tmp/fusion_20140508_135048/folder0016/Time000200']
+
+
+(420, 174, 42) [210, 87, 81]
+[  43.5         411.93326215]
+[-231.78720762   36.32747521]
+fusing final stack for timepoint 200
+fusing stacks
+appending obtained parameters to output file /tmp/fusion_20140508_135048/folder0017/pipe/obtainedParameters_20140508_135048.py
+eliminating temp files:
+scp lin from /tmp/fusion_20140508_135048/folder0018/Time000200_00.tif to /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused/Time000200_00.tif
+copying /tmp/fusion_20140508_135048/folder0018/Time000200_00.tif to hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused/Time000200_00.tif
+scp lin from /tmp/fusion_20140508_135048/folder0017/pipe/obtainedParameters_20140508_135048.py to /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/pipe/obtainedParameters_20140508_135048.py
+copying /tmp/fusion_20140508_135048/folder0017/pip
+elastix is started at Thu May  8 13:51:04 2014.
+
+which elastix:   /home/malbert/drosophila/scripts/registration/preprocessing_dev2/dependencies_linux/elastix_linux64_v4.7/bin/elastix
+elastix runs at: hufnagel-vip2
+  Linux 2.6.32-44-generic (x64), #98-Ubuntu SMP Mon Sep 24 17:27:10 UTC 2012
+  with 24153 MB memory, and 8 cores @ 1600 MHz.
+-------------------------------------------------------------------------
+
+Running elastix with parameter file 0: "/tmp/fusion_20140508_135048/folder0016/Time000201/elastixParameters.txt".
+
+Current time: Thu May  8 13:51:04 2014.
+Reading the elastix parameters from file ...
+
+Installing all components.
+InstallingComponents was successful.
+
+ELASTIX version: 4.700
+Command line options from ElastixBase:
+-f        /tmp/fusion_20140508_135048/folder0013/Time000201_00_filtered.mhd
+-m        /tmp/fusion_20140508_135048/folder0014/Time000201_00_filtered.mhd
+-fMask    unspecified, so no fixed mask used
+-mMask    unspecified, so no moving mask used
+-out      /tmp/fusion_20140508_135048/folder0016/Time000201/
+-p        /tmp/fusion_20140508_135048/folder0016/Time000201/elastixParameters.txt
+-threads  unspecified, so all available threads are used
+Command line options from TransformBase:
+-t0       /tmp/fusion_20140508_135048/folder0016/Time000201/elastixInitialTransform.txt
+
+Reading images...
+Reading images took 19 ms.
+
+Reading the elastix parameters from file ...
+
+WARNING: The parameter "AutomaticTransformInitializationMethod", requested at entry number 0, does not exist at all.
+  The default value "GeometricalCenter" is used instead.
+Transform parameters are initialized as: [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0]
+Scales for transform parameters are: [10000, 10000000, 10000000, 10000000, 10000, 10000000, 10000000, 10000000, 10000, 1, 1, 1]
+WARNING: The parameter "GenerateLineSearchIterations", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+Initialization of all components (before registration) took: 0 ms.
+Preparation of the image pyramids took: 1021 ms.
+
+Resolution: 0
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "CheckNumberOfSamples", requested at entry number 0, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+Setting the fixed masks took: 0 ms.
+Setting the moving masks took: 0 ms.
+WARNING: The parameter "NumberOfFixedHistogramBins", requested at entry number 0, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "NumberOfMovingHistogramBins", requested at entry number 0, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "FixedLimitRangeRatio", requested at entry number 0, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "MovingLimitRangeRatio", requested at entry number 0, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "FixedKernelBSplineOrder", requested at entry number 0, does not exist at all.
+  The default value "0" is used instead.
+WARNING: The parameter "MovingKernelBSplineOrder", requested at entry number 0, does not exist at all.
+  The default value "3" is used instead.
+WARNING: The parameter "UseFastAndLowMemoryVersion", requested at entry number 0, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "UseJacobianPreconditioning", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "FiniteDifferenceDerivative", requested at entry number 0, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "MaximumNumberOfIterations", requested at entry number 0, does not exist at all.
+  The default value "100" is used instead.
+WARNING: The parameter "MaximumNumberOfLineSearchIterations", requested at entry number 0, does not exist at all.
+  The default value "20" is used instead.
+WARNING: The parameter "StepLength", requested at entry number 0, does not exist at all.
+  The default value "1" is used instead.
+WARNING: The parameter "LineSearchValueTolerance", requested at entry number 0, does not exist at all.
+  The default value "0.0001" is used instead.
+WARNING: The parameter "LineSearchGradientTolerance", requested at entry number 0, does not exist at all.
+  The default value "0.9" is used instead.
+WARNING: The parameter "LBFGSUpdateAccuracy", requested at entry number 0, does not exist at all.
+  The default value "5" is used instead.
+WARNING: The parameter "StopIfWolfeNotSatisfied", requested at entry number 0, does not exist at all.
+  The default value "true" is used instead.
+Elastix initialization of all components (for this resolution) took: 0 ms.
+Initialization of AdvancedMattesMutualInformation metric took: 0 ms.
+1:ItNr	1a:SrchDirNr	1b:LineItNr	2:Metric	3:StepLength	4a:||Gradient||	4b:||SearchDir||	4c:DirGradient	5:Phase	6a:Wolfe1	6b:Wolfe2	7:LinSrchStopCondition	Time[ms]
+0	0	2	-0.576846	0.092328	0.014616	1.000000	0.001073	Main	true	true	WolfeSatisfied	7
+1	1	5	-0.592900	16.494186	0.038681	0.058941	0.000087	Main	true	true	WolfeSatisfied	11
+2	2	3	-0.636954	11.566602	0.016418	0.472316	-0.001100	Main	true	true	WolfeSatisfied	6
+3	3	1	-0.638415	0.299679	0.011829	2.181940	-0.000680	Main	true	true	WolfeSatisfied	3
+4	4	3	-0.645884	2.424636	0.026383	0.381713	0.001342	Main	true	true	WolfeSatisfied	6
+5	5	0	-0.646688	1.000000	0.013557	0.138349	0.000052	Main	true	true	WolfeSatisfied	1
+6	6	2	-0.665342	2.061760	0.017855	1.315119	-0.007906	Main	true	true	WolfeSatisfied	4
+7	7	0	-0.777038	1.000000	0.028384	19.639424	-0.084576	Main	true	true	WolfeSatisfied	1
+Time spent in resolution 0 (ITK initialisation and iterating): 0.080 s.
+Applying transform this resolution ...
+
+  Writing image ...
+  Applying transform took 0 s.
+Stopping condition: Error in LineSearch.
+
+itk::ExceptionObject (0x7f65dc00d9a0)
+Location: "unknown" 
+File: /home/sklein/tk2/elastix/exports/tagspublic/elastix_04_7/src/Common/CostFunctions/itkAdvancedImageToImageMetric.hxx
+Line: 964
+Description: itk::ERROR: AdvancedMattesMutualInformationMetric(0x4bba9f0): Too many samples map outside moving image buffer: 0 / 70
+
+
+
+The error is ignored and convergence is assumed.
+
+Resolution: 1
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "CheckNumberOfSamples", requested at entry number 1, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+Setting the fixed masks took: 0 ms.
+Setting the moving masks took: 0 ms.
+WARNING: The parameter "NumberOfFixedHistogramBins", requested at entry number 1, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "NumberOfMovingHistogramBins", requested at entry number 1, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "FixedLimitRangeRatio", requested at entry number 1, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "MovingLimitRangeRatio", requested at entry number 1, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "FixedKernelBSplineOrder", requested at entry number 1, does not exist at all.
+  The default value "0" is used instead.
+WARNING: The parameter "MovingKernelBSplineOrder", requested at entry number 1, does not exist at all.
+  The default value "3" is used instead.
+WARNING: The parameter "UseFastAndLowMemoryVersion", requested at entry number 1, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "UseJacobianPreconditioning", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "FiniteDifferenceDerivative", requested at entry number 1, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "MaximumNumberOfIterations", requested at entry number 1, does not exist at all.
+  The default value "100" is used instead.
+WARNING: The parameter "MaximumNumberOfLineSearchIterations", requested at entry number 1, does not exist at all.
+  The default value "20" is used instead.
+WARNING: The parameter "StepLength", requested at entry number 1, does not exist at all.
+  The default value "1" is used instead.
+WARNING: The parameter "LineSearchValueTolerance", requested at entry number 1, does not exist at all.
+  The default value "0.0001" is used instead.
+WARNING: The parameter "LineSearchGradientTolerance", requested at entry number 1, does not exist at all.
+  The default value "0.9" is used instead.
+WARNING: The parameter "LBFGSUpdateAccuracy", requested at entry number 1, does not exist at all.
+  The default value "5" is used instead.
+WARNING: The parameter "StopIfWolfeNotSatisfied", requested at entry number 1, does not exist at all.
+  The default value "true" is used instead.
+Elastix initialization of all components (for this resolution) took: 0 ms.
+Initialization of AdvancedMattesMutualInformation metric took: 0 ms.
+1:ItNr	1a:SrchDirNr	1b:LineItNr	2:Metric	3:StepLength	4a:||Gradient||	4b:||SearchDir||	4c:DirGradient	5:Phase	6a:Wolfe1	6b:Wolfe2	7:LinSrchStopCondition	Time[ms]
+0	0	4	-0.365802	32.107990	0.008607	1.000000	-0.001896	Main	true	true	WolfeSatisfied	18
+1	1	1	-0.368134	0.104611	0.008098	48.384643	0.068494	Main	true	true	WolfeSatisfied	5
+2	2	0	-0.380461	1.000000	0.006877	7.956678	-0.031240	Main	true	true	WolfeSatisfied	3
+3	3	1	-0.388543	0.285434	0.004174	14.487360	0.000048	Main	true	true	WolfeSatisfied	6
+4	4	0	-0.393403	1.000000	0.002270	2.268445	-0.000481	Main	true	true	WolfeSatisfied	3
+5	5	0	-0.395076	1.000000	0.001111	1.663884	-0.000670	Main	true	true	WolfeSatisfied	3
+6	6	0	-0.396137	1.000000	0.000804	1.594081	-0.000733	Main	true	true	WolfeSatisfied	3
+7	7	0	-0.397490	1.000000	0.001366	3.293586	-0.000839	Main	true	true	WolfeSatisfied	3
+8	8	1	-0.397894	0.143155	0.001194	6.274327	-0.001271	Main	true	true	WolfeSatisfied	6
+9	9	0	-0.398304	1.000000	0.000674	0.908849	0.000168	Main	true	true	WolfeSatisfied	3
+10	10	0	-0.398477	1.000000	0.000414	0.905895	0.000100	Main	true	true	WolfeSatisfied	3
+11	11	0	-0.398550	1.000000	0.000413	0.459327	0.000041	Main	true	true	WolfeSatisfied	3
+12	12	0	-0.398588	1.000000	0.000283	0.157526	-0.000024	Main	true	true	WolfeSatisfied	3
+13	13	1	-0.398589	0.165507	0.000285	0.302376	0.000026	Main	true	true	WolfeSatisfied	6
+14	14	0	-0.398592	1.000000	0.000221	0.114763	0.000001	Main	true	true	WolfeSatisfied	3
+15	15	0	-0.398600	1.000000	0.000189	0.066418	-0.000004	Main	true	true	WolfeSatisfied	3
+16	16	0	-0.398608	1.000000	0.000178	0.279319	0.000009	Main	true	true	WolfeSatisfied	3
+17	17	0	-0.398618	1.000000	0.000216	0.075708	-0.000008	Main	true	true	WolfeSatisfied	3
+18	18	0	-0.398637	1.000000	0.000304	0.530976	0.000006	Main	true	true	WolfeSatisfied	3
+19	19	0	-0.398676	1.000000	0.000264	0.497073	-0.000033	Main	true	true	WolfeSatisfied	3
+20	20	0	-0.398880	1.000000	0.000412	4.124576	-0.000117	Main	true	true	WolfeSatisfied	3
+21	21	1	-0.399059	0.525262	0.000600	14.224234	-0.000222	Main	true	true	WolfeSatisfied	7
+22	22	0	-0.399404	1.000000	0.000899	9.186907	-0.000198	Main	true	true	WolfeSatisfied	3
+23	23	1	-0.399525	0.314011	0.001116	18.427919	0.000077	Main	true	true	WolfeSatisfied	6
+24	24	0	-0.399960	1.000000	0.000609	9.655989	0.000159	Main	true	true	WolfeSatisfied	3
+25	25	0	-0.400137	1.000000	0.000271	1.356867	-0.000074	Main	true	true	WolfeSatisfied	3
+26	26	0	-0.400285	1.000000	0.000225	5.635337	-0.000075	Main	true	true	WolfeSatisfied	2
+27	27	0	-0.400295	1.000000	0.000272	8.150922	0.000077	Main	true	true	WolfeSatisfied	2
+28	28	0	-0.400331	1.000000	0.000160	1.421951	0.000013	Main	true	true	WolfeSatisfied	2
+Time spent in resolution 1 (ITK initialisation and iterating): 0.133 s.
+Applying transform this resolution ...
+
+  Writing image ...
+  Applying transform took 0 s.
+Stopping condition: The gradient magnitude has (nearly) vanished.
+
+Resolution: 2
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "CheckNumberOfSamples", requested at entry number 2, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "NewSamplesEveryIteration", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+Setting the fixed masks took: 0 ms.
+Setting the moving masks took: 0 ms.
+WARNING: The parameter "NumberOfFixedHistogramBins", requested at entry number 2, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "NumberOfMovingHistogramBins", requested at entry number 2, does not exist at all.
+  The default value "16" is used instead.
+WARNING: The parameter "FixedLimitRangeRatio", requested at entry number 2, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "MovingLimitRangeRatio", requested at entry number 2, does not exist at all.
+  The default value "0.01" is used instead.
+WARNING: The parameter "FixedKernelBSplineOrder", requested at entry number 2, does not exist at all.
+  The default value "0" is used instead.
+WARNING: The parameter "MovingKernelBSplineOrder", requested at entry number 2, does not exist at all.
+  The default value "3" is used instead.
+WARNING: The parameter "UseFastAndLowMemoryVersion", requested at entry number 2, does not exist at all.
+  The default value "true" is used instead.
+WARNING: The parameter "UseJacobianPreconditioning", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "FiniteDifferenceDerivative", requested at entry number 2, does not exist at all.
+  The default value "false" is used instead.
+WARNING: The parameter "MaximumNumberOfIterations", requested at entry number 2, does not exist at all.
+  The default value "100" is used instead.
+WARNING: The parameter "MaximumNumberOfLineSearchIterations", requested at entry number 2, does not exist at all.
+  The default value "20" is used instead.
+WARNING: The parameter "StepLength", requested at entry number 2, does not exist at all.
+  The default value "1" is used instead.
+WARNING: The parameter "LineSearchValueTolerance", requested at entry number 2, does not exist at all.
+  The default value "0.0001" is used instead.
+WARNING: The parameter "LineSearchGradientTolerance", requested at entry number 2, does not exist at all.
+  The default value "0.9" is used instead.
+WARNING: The parameter "LBFGSUpdateAccuracy", requested at entry number 2, does not exist at all.
+  The default value "5" is used instead.
+WARNING: The parameter "StopIfWolfeNotSatisfied", requested at entry number 2, does not exist at all.
+  The default value "true" is used instead.
+Elastix initialization of all components (for this resolution) took: 0 ms.
+Initialization of AdvancedMattesMutualInformation metric took: 2 ms.
+1:ItNr	1a:SrchDirNr	1b:LineItNr	2:Metric	3:StepLength	4a:||Gradient||	4b:||SearchDir||	4c:DirGradient	5:Phase	6a:Wolfe1	6b:Wolfe2	7:LinSrchStopCondition	Time[ms]
+0	0	1	-0.422934	5.000000	0.005512	1.000000	-0.004308	Main	true	true	WolfeSatisfied	80
+1	1	0	-0.472242	1.000000	0.004631	10.022616	0.009231	Main	true	true	WolfeSatisfied	22
+2	2	0	-0.501757	1.000000	0.003904	4.080770	0.013424	Main	true	true	WolfeSatisfied	22
+3	3	2	-0.502226	0.122040	0.003465	2.341080	-0.006351	Main	true	true	WolfeSatisfied	69
+4	4	19	-0.502226	0.000002	0.003465	2.563762	-0.007192	Main	true	false	MaxNrIterations	454
+Time spent in resolution 2 (ITK initialisation and iterating): 0.650 s.
+Applying transform this resolution ...
+
+  Writing image ...
+  Applying transform took 0 s.
+Stopping condition: Wolfe conditions are not satisfied.
+
+
+Registration result checksum: 2505785287
+
+Skipping applying final transform, no resulting output image generated.
+
+Final metric value  = -0.502226
+Time spent on saving the results, applying the final transform etc.: 0 ms.
+Running elastix with parameter file 0: "/tmp/fusion_20140508_135048/folder0016/Time000201/elastixParameters.txt", has finished.
+
+
+Current time: Thu May  8 13:51:06 2014.
+Time used for running elastix with this parameter file: 2 Seconds.
+
+-------------------------------------------------------------------------
+
+Total time elapsed: 2 Seconds.
+
+e/obtainedParameters_20140508_135048.py to hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/Result6/pipe/obtainedParameters_20140508_135048.py
+waiting for process 11
+processing timepoint 201
+checking if /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused/Time000201_00.tif exists...no
+waiting for process 6
+waiting for process 7
+waiting for process 8
+waiting for process 9
+fusing and filtering opposing stacks from view 0
+loading files...
+[420 174  42]
+[420 174  42]
+(420, 174, 42) (420, 174, 42)
+(420, 174, 42) (420, 174, 42)
+fusing stacks
+subtracting background using gaussian filter (radius 50)
+fusing and filtering opposing stacks from view 1
+loading files...
+[420 174  42]
+[420 174  42]
+(420, 174, 42) (420, 174, 42)
+(420, 174, 42) (420, 174, 42)
+fusing stacks
+subtracting background using gaussian filter (radius 50)
+##########
+continuing without normalization
+##########
+(420, 174, 42) [210, 87, 81]
+checking if /tmp/fusion_20140508_135048/folder0016/Time000201 exists...no
+
+
+Calling elastix for image based registration with arguments:
+
+ ['/home/malbert/drosophila/scripts/registration/preprocessing_dev2/dependencies_linux/elastix_linux64_v4.7/bin/elastix', '-f', '/tmp/fusion_20140508_135048/folder0013/Time000201_00_filtered.mhd', '-m', '/tmp/fusion_20140508_135048/folder0014/Time000201_00_filtered.mhd', '-p', '/tmp/fusion_20140508_135048/folder0016/Time000201/elastixParameters.txt', '-t0', '/tmp/fusion_20140508_135048/folder0016/Time000201/elastixInitialTransform.txt', '-out', '/tmp/fusion_20140508_135048/folder0016/Time000201']
+
+
+(420, 174, 42) [210, 87, 81]
+fusing final stack for timepoint 201
+fusing stacks
+appending obtained parameters to output file /tmp/fusion_20140508_135048/folder0017/pipe/obtainedParameters_20140508_135048.py
+waiting for process 10
+eliminating temp files:
+   /tmp/fusion_20140508_135048/folder0018/Time000200_00.tif
+   /tmp/fusion_20140508_135048/folder0017/pipe/obtainedParameters_20140508_135048.py
+scp lin from /tmp/fusion_20140508_135048/folder0018/Time000201_00.tif to /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused/Time000201_00.tif
+copying /tmp/fusion_20140508_135048/folder0018/Time000201_00.tif to hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/Result6/fused/Time000201_00.tif
+scp lin from /tmp/fusion_20140508_135048/folder0017/pipe/obtainedParameters_20140508_135048.py to /media/vip2data/malbert/registration/20120803/Data_scaled/Result6/pipe/obtainedParameters_20140508_135048.py
+copying /tmp/fusion_20140508_135048/folder0017/pipe/obtainedParameters_20140508_135048.py to hufnagel-vip2.pool:/media/vip2data/malbert/registration/20120803/Data_scaled/Result6/pipe/obtainedParameters_20140508_135048.py
+waiting for process 13
+waiting for process 12
+copying /tmp/fusion_20140508_135048/folder0017/pipe to /media/vip2data/malbert/registration/20120803/Data_scaled/Result6
+scp lin from /tmp/fusion_20140508_135048/folder0017/pipe to /media/vip2data/malbert/registration/20120803/Data_scaled/Result6
+waiting for process 14
+
+FUSIONING end
+------------------------------
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+KeyboardInterrupt
+
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+[0;32mIn [[1;32m1[0;32m]: [0m
+Do you really want to exit ([y]/n)? 

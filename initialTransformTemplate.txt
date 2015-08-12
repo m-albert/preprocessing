@@ -1,0 +1,17 @@
+(Transform "AffineTransform")
+(NumberOfParameters 12)
+
+(HowToCombineTransforms "Compose")
+
+(InitialTransformParametersFileName "NoInitialTransform")
+
+// Image specific
+(FixedImageDimension 3)
+(MovingImageDimension 3)
+(FixedInternalImagePixelType "float")
+(MovingInternalImagePixelType "float")
+//(UseDirectionCosines "false")
+
+
+
+(CenterOfRotationPoint 0 0 0)

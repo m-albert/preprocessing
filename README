@@ -1,0 +1,41 @@
+PIPELINE FOR PREPROCESSING MUVI-SPIM DATA
+AUTHOR: MARVIN ALBERT (marvin.albert@gmail.com)
+
+input:
+    bead files
+    data timepoints
+    
+output:
+    (bead alignment parameters)
+    fused stack
+    
+usage:
+- define parameters in configuration.py (template with explanations available in main folder)
+- run the pipeline:
+    linux:
+        run execute-linux.sh pathToConfigurationFile
+    windows:
+        specifiy pathToConfigurationFile in execute-windows.bat and execute
+
+dependencies contained in the binary:
+1) python 2.6
+2) numpy
+3) scipy
+5) SimpleITK
+6) elastix
+
+comments:
+- alignment parameters are only calculated once and placed in out/pipe
+- approx. 10GB of RAM required for full fusion of 2*2 views
+- currently not fully supporting imaging settings other than: 2 opposing cameras and 2 orthogonal rotational views
+- further settings regarding the image based alignment are defined in parameterTemplate.txt and initialTransformTemplate.txt
+
+to do:
+- save obtained parameters and make them usable for next run (add option to indicate wether to use old params or nor)
+- generalize weights for final fusion (only for 0 and 90 degrees at the moment)
+- handle case without rotation
+- determine exact meaning of convergence criterium in elastix
+- write correct meta data to tiff files
+- copy data over network while computing (optimize for normal use mode and enable ssh support for cluster queing when directories cannot be mounted) (command line scp client for windows: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
+- dont automatically overwrite
+- otsu threshold for bead segmentation
