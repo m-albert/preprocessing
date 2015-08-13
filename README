@@ -15,9 +15,9 @@ usage:
     linux:
         run execute-linux.sh pathToConfigurationFile
     windows:
-        specifiy pathToConfigurationFile in execute-windows.bat and execute
+        specifiy <pathToConfigurationFile> in execute-windows.bat and execute
 
-dependencies contained in the binary:
+dependencies contained in the binary (anaconda python):
 1) python 2.6
 2) numpy
 3) scipy

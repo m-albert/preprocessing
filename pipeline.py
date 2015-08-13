@@ -77,6 +77,7 @@ if os.path.exists(beadParamsFile):
                 sitk.WriteImage(tmp,os.path.join(handler.config['pipeDir'],'beads_rot%02d.tif' %iview))
             del beadStacks
 
+
 else:
     print 'bead alignment...'
     beadFiles = [[config['beads_LC'][i],config['beads_RC'][i]] for i in range(len(config['beads_LC']))]
