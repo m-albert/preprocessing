@@ -60,7 +60,7 @@ def fuseOpposingStacks(p1,p2,s1,s2,axis=0):
     s1 = sitk.GetArrayFromImage(s1)
     s2 = sitk.GetArrayFromImage(s2)
 
-    halfY = 0.9
+    # halfY = 0.9
     nZPlanes = size[2]
     sigmoidHalfWidthInPixels = nZPlanes*0.05
     halfY = 0.9 # half width is defined as the x value corresponding to y=halfY
@@ -74,6 +74,31 @@ def fuseOpposingStacks(p1,p2,s1,s2,axis=0):
         w2 = n.abs(1/(1+n.exp(sigmoidA*(-z+size[2]/2.))))
         s1[z,:,:] = (w1*s1[z,:,:]+w2*s2[z,:,:])/(w1+w2)
     return sitk.GetImageFromArray(s1.swapaxes(0,axis))
+
+def fuseOpposingStacksGus(s1,s2,axis=0):
+    # s1 = beads.transformStack(invertParams(p1),s1)
+    # s2 = beads.transformStack(invertParams(p2),s2)
+    size = s1.GetSize()
+    s1 = sitk.GetArrayFromImage(s1)
+    s2 = sitk.GetArrayFromImage(s2)
+
+    # halfY = 0.9
+    nZPlanes = size[2]
+    sigmoidHalfWidthInPixels = nZPlanes*0.05
+    halfY = 0.9 # half width is defined as the x value corresponding to y=halfY
+    sigmoidA = n.log(1./halfY-1.)/sigmoidHalfWidthInPixels
+
+    length = s1.shape[axis]
+    s1 = s1.swapaxes(0,axis)
+    s2 = s2.swapaxes(0,axis)
+    for z in range(length):
+        w1 = n.abs(1/(1+n.exp(sigmoidA*(z-size[2]/2.))))
+        w2 = n.abs(1/(1+n.exp(sigmoidA*(-z+size[2]/2.))))
+        s1[z,:,:] = (w1*s1[z,:,:]+w2*s2[z,:,:])/(w1+w2)
+        s1[z,:,:] = (w1*s1[z,:,:])
+        s2[z,:,:] = (w2*s2[z,:,:])
+
+    return sitk.GetImageFromArray(s1.swapaxes(0,axis)),sitk.GetImageFromArray(s2.swapaxes(0,axis))
 
 def fuseOpposingStacksOld(p1,p2,s1,s2,normalizeIntensities=True,axis=0):
     print 'fusing (normalize intensities %s)' %(['OFF','ON'][int(normalizeIntensities)])
@@ -99,6 +124,7 @@ def fuseStacks(s,weights,p=None):
     if p != None:
         for iis in range(len(s)):
             s[iis] = beads.transformStack(p[iis],s[iis],outShape=s[0].GetSize())
+    # pdb.set_trace()
     if weights is None:
         print 'fusing stacks by averaging'
         N = len(s)

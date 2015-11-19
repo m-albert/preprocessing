@@ -32,6 +32,12 @@ if sys.platform[:3] == 'win':
     transformixDir = os.path.join(curDir,'dependencies_windows\\elastix_windows64_v4.6\\transformix.exe')
     tmpFolder = os.path.join('C:\\Windows\\Temp','fusionTmpFolder_%s' %timestamp) #untested!
 
+if sys.platform[:3] == 'dar':
+    elastixDir = os.path.join(curDir,'../../software/elastix_macosx64_v4.8/bin/elastix')
+    transformixDir = os.path.join(curDir,'../../software/elastix_macosx64_v4.8/bin/transformix')
+    os.environ['LD_LIBRARY_PATH'] = os.path.join(curDir,'../../software/elastix_macosx64_v4.8/lib')
+    tmpFolder = os.environ['TMPDIR']
+
 for relPathAppend in relPathAppends:
     sys.path.append(os.path.join(curDir,relPathAppend))
 
@@ -56,7 +62,7 @@ from configuration import config
 
 importsDict['elastixDir'] = elastixDir
 importsDict['transformixDir'] = transformixDir
-# os.mkdir(tmpFolder)
+os.mkdir(tmpFolder)
 importsDict['tmpDir'] = tmpFolder
 
 # some aliases
