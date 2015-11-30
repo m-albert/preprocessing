@@ -68,15 +68,6 @@ if os.path.exists(beadParamsFile):
     alignParams = 0 # line so that editor does not complain about undefined reference
     exec('from %s import alignParams') %os.path.basename(beadParamsFile[:-3])
     print 'found alignment parameters in %s' %beadParamsFile
-    if handler.config['keepTemporaryImageFiles'] and not handler.config['useFileCaching']:
-        if not os.path.exists(os.path.join(handler.config['pipeDir'],'beads_rot%02d.tif' %0)):
-            print 'transforming beads for checking initial alignment...'
-            beadStacks = beads.loadFiles([config['beads_LC'][i] %{'t':0} for i in range(len(config['beads_LC']))],handler.config)
-            for iview in range(len(handler.config['beads_LC'])):
-                tmp = beads.transformStack(fusion.invertParams(alignParams[iview][1][1]),beadStacks[iview])
-                sitk.WriteImage(tmp,os.path.join(handler.config['pipeDir'],'beads_rot%02d.tif' %iview))
-            del beadStacks
-
 
 else:
     print 'bead alignment...'
@@ -89,8 +80,8 @@ else:
         handler.finalizeProcesses(beadsDownload)
     segmentedBeads = [beads.segmentBeads(
                       beads.loadFiles([config['beads_LC'][i] %{'t':0},
-                                       config['beads_RC'][i] %{'t':0}],handler.config),
-                                       config['mexicanHatKernelSize']) for i in range(len(config['beads_LC']))]
+                                    config['beads_RC'][i] %{'t':0}],handler.config),
+                                  config['mexicanHatKernelSize']) for i in range(len(config['beads_LC']))]
     alignParams = []
     for iview,view in enumerate(beadFiles):
         tmpParams = []
@@ -102,7 +93,17 @@ else:
     newParamsFile = open(beadParamsFile,'w')
     newParamsFile.write(commentString+'alignParams = '+alignParams.__str__())
     newParamsFile.close()
+
 alignParams = n.array(alignParams)
+
+if handler.config['keepTemporaryImageFiles'] and not handler.config['useFileCaching']:
+    if not os.path.exists(os.path.join(handler.config['pipeDir'],'beads_rot%02d.tif' %0)):
+        print 'transforming beads for checking initial alignment...'
+        beadStacks = beads.loadFiles([config['beads_LC'][i] %{'t':0} for i in range(len(config['beads_LC']))],handler.config)
+        for iview in range(len(handler.config['beads_LC'])):
+            tmp = beads.transformStackAndRef(fusion.invertParams(alignParams[iview][1][1]),beadStacks[iview],beadStacks[0])
+            sitk.WriteImage(tmp,os.path.join(handler.config['pipeDir'],'beads_rot%02d.tif' %iview))
+        del beadStacks
 
 print '\nBEAD ALIGNMENT end\n'+30*'-'
 
