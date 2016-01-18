@@ -130,6 +130,7 @@ class handler(object):
         return None
 
     def checkForExistingParameters(self):
+        # pdb.set_trace()
         if not len(self.origConfig['useParametersFromFileWithPath']):
             self.useExistingParameters = False
             self.existingParameters = dict()
@@ -147,6 +148,7 @@ class handler(object):
         tmpFile.close()
         self.useExistingParameters = True
         self.existingParameters = ast.literal_eval(tmpString)
+        # pdb.set_trace()
         return
 
     def checkDir(self,folder,name,ask=False,remote=False):

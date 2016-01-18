@@ -434,7 +434,7 @@ for itp,tp in enumerate(config['tps']):
 
     # loop over views
 
-    if (not handler.useExistingParameters or not handler.existingParameters.has_key(str(tp))) or not config['useOnlyBeadParameters']:
+    if (not handler.useExistingParameters or not handler.existingParameters.has_key(str(tp))) and not config['useOnlyBeadParameters']:
         finalParamsList = [[1,0,0,0,1,0,0,0,1,0,0,0]]
         for iof,of in enumerate(dataFiles[1:]):
 

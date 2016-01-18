@@ -51,6 +51,7 @@ def segmentBeads(ims,mexicanHatKernelSize):
     #thresholds = [n.mean(i)+2*n.std(i) for i in ims]
     print 'segmenting beads (threshold: mean+std)'
     rs = []
+    # pdb.set_trace()
     for imi,im in enumerate(ims):
         #im = sitk.GetImageFromArray(im)
         im = sitk.SmoothingRecursiveGaussian(im,mexicanHatKernelSize)-sitk.SmoothingRecursiveGaussian(im,mexicanHatKernelSize*2)
@@ -746,49 +747,54 @@ def findParametersNilsNew(rs,N=4,useFeatures=True,dz=None):
         print 'mean bead distance in pixels after alignment is\n%s' %n.mean(distances3)
     return params
 
-def findParametersNils(rs,dz,N=4):
+# def findParametersNils(rs,dz,N=4):
+def findParametersNils(rs,dz):
+    # Ns = [4,3,5,6]
+    Ns = [4]
     useFeatures = True
     # problem in bestMatch() solved?
     params =[[1.,0.,0.,0.,1.,0.,0.,0.,1.,0.,0.,0.]]
     for ibeads in range(1,len(rs)):
         tmpWorked = False
-        for featureFunc in [calcFeatures,calcFeaturesFallback]:
+        for N in Ns:
             if tmpWorked: break
-            if useFeatures:
-                scales = n.linspace(0.75*dz,1.25*dz,30)
-            else: scales = [1.]
-            for scale in scales:
-                scale = n.array([scale,1.,1.])
-                #print scale
-                tmpbeads = scaleBeads(rs[ibeads],scale,verbose=True)
-                refbeads = scaleBeads(rs[0],scale)
+            for featureFunc in [calcFeatures,calcFeaturesFallback]:
+                if tmpWorked: break
                 if useFeatures:
-                    f0 = featureFunc(refbeads,N=N)
-                    # find initial matches and calculate approximate transform
-                    tmpf = featureFunc(tmpbeads,N=N)
-                else:
-                    f0 = refbeads
-                    tmpf = tmpbeads
-                if len(f0)>=len(tmpf): indList = [0,1]
-                else: indList = [1,0]
-                indices,distances = bestMatch(*tuple([[f0,tmpf][i] for i in indList]))
-                number = 20
-                number = n.max([len(indices[0])/10,number])
-                number = n.min([len(indices[0]),number])
-                model = ransac.AffineTransformationModel(rs[0][indices[indList[0]]],rs[ibeads][indices[indList[1]]])
-                data = n.array(range(number))
-                #print indices
-                #print number
-                if useFeatures: maxIterations = number*10
-                else: maxIterations = number*1000
-                try:
-                    fit,inliers = ransac.ransac(data,model,4,maxIterations,50,number/2,return_all=1)
-                    tmpWorked = True
-                    print 'OK: found parameters'
-                    break
-                except ValueError:
-                    print 'try again with different z scale factor...'
-                    pass
+                    scales = n.linspace(0.75*dz,1.25*dz,30)
+                else: scales = [1.]
+                for scale in scales:
+                    scale = n.array([scale,1.,1.])
+                    #print scale
+                    tmpbeads = scaleBeads(rs[ibeads],scale,verbose=True)
+                    refbeads = scaleBeads(rs[0],scale)
+                    if useFeatures:
+                        f0 = featureFunc(refbeads,N=N)
+                        # find initial matches and calculate approximate transform
+                        tmpf = featureFunc(tmpbeads,N=N)
+                    else:
+                        f0 = refbeads
+                        tmpf = tmpbeads
+                    if len(f0)>=len(tmpf): indList = [0,1]
+                    else: indList = [1,0]
+                    indices,distances = bestMatch(*tuple([[f0,tmpf][i] for i in indList]))
+                    number = 20
+                    number = n.max([len(indices[0])/10,number])
+                    number = n.min([len(indices[0]),number])
+                    model = ransac.AffineTransformationModel(rs[0][indices[indList[0]]],rs[ibeads][indices[indList[1]]])
+                    data = n.array(range(number))
+                    #print indices
+                    #print number
+                    if useFeatures: maxIterations = number*10
+                    else: maxIterations = number*1000
+                    try:
+                        fit,inliers = ransac.ransac(data,model,4,maxIterations,50,number/2,return_all=1)
+                        tmpWorked = True
+                        print 'OK: found parameters'
+                        break
+                    except ValueError:
+                        print 'try again with different z scale factor...'
+                        pass
 
         if not tmpWorked:
             raise Exception('Could not register bead images.')

@@ -62,7 +62,7 @@ from configuration import config
 
 importsDict['elastixDir'] = elastixDir
 importsDict['transformixDir'] = transformixDir
-os.mkdir(tmpFolder)
+if not os.path.exists(tmpFolder): os.mkdir(tmpFolder)
 importsDict['tmpDir'] = tmpFolder
 
 # some aliases
