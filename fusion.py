@@ -544,9 +544,9 @@ def registerWithElastix(fi,mi,config,initialParams=None,tmpFolder=None):
         tmpFolder = '/tmp'
     if initialParams == None:
         #params = n.array([1,0,0,0,-1,0,0,0,1,0,fi.GetSize()[1],0])
-        params = n.array([-1,0,0,0,1,0,0,0,1,fi.GetSize()[0],0,0])
+        # params = n.array([-1,0,0,0,1,0,0,0,1,fi.GetSize()[0],0,0])
         #params = invertParams(n.array([0.99728742898194889, -0.00038156465789470365, -0.00045136981651977868, -0.00078167254385604035, 1.0043850721125063, -0.014534116681577268, -0.0073061921565782829, -0.015172334919639853, -1.003839698888308, 0.90114927532248734, 137.0586870286873, 2173.3420588855224]))
-        # params = n.array([1,0,0,0,1,0,0,0,1,0,0,0])
+        params = n.array([1,0,0,0,1,0,0,0,1,0,0,0])
     else:
         params = initialParams
 
