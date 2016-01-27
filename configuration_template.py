@@ -163,6 +163,13 @@ config['useNoMaskForFirstIteration']    = True   # get good registration results
                                                  # used as starting point for the following iterations (possibly without mask)
                                                  # (option doesn't conflict with useMask = True)
 config['opposingFusionWithElastix']     = False  # ignore beads and perform image based registration for opposing views
+config['opposingFusionWithElastix_startAndStopZPlane'] = None
+                                                 # start and stop indices for planes used for elastix registration
+                                                 # example: [80,120] for planes 80 to 120
+                                                 #          None     for all planes
+config['opposingFusionWithElastix_eliminateZContribution'] = False
+                                                 # eliminate z contribution from parameters obtained
+                                                 # from elastix for opposing fusion (True or False)
 config['affineOrRotation']              = True   # True: searches for affine transformations between views (12 parameters)
                                                  # False: searches for rotations (6 parameters)
                                                  # default is True

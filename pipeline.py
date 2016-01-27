@@ -258,8 +258,19 @@ for itp,tp in enumerate(config['tps']):
                     if calcWeights: opposingWeights.append(fusion.calculateOpposingWeights(tmpims[0].GetSize()))
 
             if config['opposingFusionWithElastix']:
-            # if config['opposingFusionWithElastix']:
-                opposingFusionParams = [[1.,0,0,0,1,0,0,0,1,0,0,0],fusion.registerWithElastix(tmpims[0],tmpims[1],handler.config,tmpFolder=config['pipeDir'])]
+                tmpFixed = tmpims[0]
+                tmpMoving = tmpims[1]
+                if not config['opposingFusionWithElastix_startAndStopZPlane'] is None:
+                    tmpIndices = config['opposingFusionWithElastix_startAndStopZPlane']
+                    tmpFixed  = tmpFixed[:,:,tmpIndices[0]:tmpIndices[1]]
+                    tmpMoving = tmpMoving[:,:,tmpIndices[0]:tmpIndices[1]]
+                elParams = fusion.registerWithElastix(tmpFixed,tmpMoving,handler.config,tmpFolder=config['pipeDir'])
+                # eliminate z component
+                if config['opposingFusionWithElastix_eliminateZContribution']:
+                    elParams = fusion.eliminateComponentFromParameters(elParams,2)
+                del tmpFixed,tmpMoving
+                opposingFusionParams = [[1.,0,0,0,1,0,0,0,1,0,0,0],
+                                        elParams]
             else:
                 opposingFusionParams = [fusion.invertParams(alignParams[iviews][0][0]),fusion.invertParams(alignParams[iviews][0][1])]
 

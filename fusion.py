@@ -4,6 +4,21 @@ import beads
 import transformations
 import filters
 
+def eliminateComponentFromParameters(p,axis):
+
+    p = n.array(p)
+
+    # eliminate scaling, rotation and shearing contributions
+    matrix = p[:9].reshape((3,3))
+    matrix[axis] = 0
+    matrix[:,axis] = 0
+    matrix[axis,axis] = 1
+    p[:9] = matrix.flatten()
+
+    # eliminate translation
+    p[9+axis] = 0
+    return p
+
 def calculateOpposingWeights(size,sigmoidHalfWidthRelativeToStackSize=0.05):
     print 'calculating weights for opposing stacks fusion'
 
